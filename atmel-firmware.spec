@@ -1,16 +1,10 @@
-%define name atmel-firmware
-%define version 1.3
-%define release %mkrel 3
-%define url http://www.thekelleys.org.uk/
-
-Name:		%{name}
-Version: 	%{version}
-Release: 	%{release}
+Name:		atmel-firmware%
+Version: 	1.3
+Release: 	4
 License: 	Distributable
 Group:		System/Kernel and hardware
-URL: 		%{url}
+URL: 		http://www.thekelleys.org.uk/
 Source0: 	%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Summary: 	Firmware for Atmel at76c50x wireless network chips
 BuildArch: 	noarch
 
@@ -30,17 +24,10 @@ same thing when hotplug is not in use.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-mkdir -p -m 755 $RPM_BUILD_ROOT/lib/firmware
-cp images/* $RPM_BUILD_ROOT/lib/firmware
-cp images.usb/* $RPM_BUILD_ROOT/lib/firmware
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+mkdir -p -m 755 %{buildroot}/lib/firmware
+cp images/* %{buildroot}/lib/firmware
+cp images.usb/* %{buildroot}/lib/firmware
 
 %files
-%defattr(-,root,root)
 %doc README COPYING 
 /lib/firmware/*.bin
-
