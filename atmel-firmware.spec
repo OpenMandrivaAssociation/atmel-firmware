@@ -1,10 +1,12 @@
-Name:		atmel-firmware%
+Name:		atmel-firmware
 Version: 	1.3
 Release: 	4
 License: 	Distributable
 Group:		System/Kernel and hardware
 URL: 		http://www.thekelleys.org.uk/
 Source0: 	%{name}-%{version}.tar.bz2
+Source1:	atmel_at76c504_2958.bin
+Source2:	atmel_at76c504a_2958.bin
 Summary: 	Firmware for Atmel at76c50x wireless network chips
 BuildArch: 	noarch
 
@@ -20,6 +22,7 @@ same thing when hotplug is not in use.
 
 %prep
 %setup -q
+mv images/atmel_at76c504c-wpa.bin images/atmel_at76c504-wpa.bin
 
 %build
 
@@ -27,6 +30,7 @@ same thing when hotplug is not in use.
 mkdir -p -m 755 %{buildroot}/lib/firmware
 cp images/* %{buildroot}/lib/firmware
 cp images.usb/* %{buildroot}/lib/firmware
+cp %{SOURCE1} %{SOURCE2} %{buildroot}/lib/firmware
 
 %files
 %doc README COPYING 
