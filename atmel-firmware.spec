@@ -1,6 +1,6 @@
 Name:		atmel-firmware%
 Version: 	1.3
-Release: 	4
+Release: 	5
 License: 	Distributable
 Group:		System/Kernel and hardware
 URL: 		http://www.thekelleys.org.uk/
