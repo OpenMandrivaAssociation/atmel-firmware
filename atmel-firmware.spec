@@ -3,7 +3,7 @@ Version: 	1.3
 Release: 	6
 License: 	Distributable
 Group:		System/Kernel and hardware
-URL: 		http://www.thekelleys.org.uk/
+URL: 		https://www.thekelleys.org.uk/
 Source0: 	%{name}-%{version}.tar.bz2
 Source1:	atmel_at76c504_2958.bin
 Source2:	atmel_at76c504a_2958.bin
